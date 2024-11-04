@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Chamado } from 'src/app/models/chamado';
@@ -30,12 +30,12 @@ export class ChamadoUpdateComponent implements OnInit {
   clientes: Cliente[] = []
   tecnicos: Tecnico[] = []
 
-  prioridade: FormControl = new FormControl(null, [Validators.required]);
-  status:     FormControl = new FormControl(null, [Validators.required]);
-  titulo:     FormControl = new FormControl(null, [Validators.required]);
-  observacoes:FormControl = new FormControl(null, [Validators.required]);
-  tecnico:    FormControl = new FormControl(null, [Validators.required]);
-  cliente:    FormControl = new FormControl(null, [Validators.required]);
+  prioridade: UntypedFormControl = new UntypedFormControl(null, [Validators.required]);
+  status:     UntypedFormControl = new UntypedFormControl(null, [Validators.required]);
+  titulo:     UntypedFormControl = new UntypedFormControl(null, [Validators.required]);
+  observacoes:UntypedFormControl = new UntypedFormControl(null, [Validators.required]);
+  tecnico:    UntypedFormControl = new UntypedFormControl(null, [Validators.required]);
+  cliente:    UntypedFormControl = new UntypedFormControl(null, [Validators.required]);
 
   constructor(
     private chamadoService: ChamadoService,

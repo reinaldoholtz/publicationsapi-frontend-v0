@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Tecnico } from 'src/app/models/tecnico';
@@ -23,10 +23,10 @@ export class TecnicoUpdateComponent implements OnInit {
     dataCriacao: ''
   }
 
-  nome: FormControl =  new FormControl(null, Validators.minLength(3));
-  cpf: FormControl =       new FormControl(null, Validators.required);
-  email: FormControl =        new FormControl(null, Validators.email);
-  senha: FormControl = new FormControl(null, Validators.minLength(3));
+  nome: UntypedFormControl =  new UntypedFormControl(null, Validators.minLength(3));
+  cpf: UntypedFormControl =       new UntypedFormControl(null, Validators.required);
+  email: UntypedFormControl =        new UntypedFormControl(null, Validators.email);
+  senha: UntypedFormControl = new UntypedFormControl(null, Validators.minLength(3));
 
   constructor(
     private service: TecnicoService,
