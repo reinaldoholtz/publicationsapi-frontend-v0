@@ -14,8 +14,10 @@ export class AuthGuard implements CanActivate {
     let authenticated = this.authService.isAuthenticated();
 
     if(authenticated) {
+      console.log("SIM autenticado",authenticated);
       return true;
     } else {
+      console.log("NAO autenticado",authenticated);
       this.router.navigate(['login']);
       return false
     }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Chamado } from 'src/app/models/chamado';
@@ -17,6 +18,8 @@ export class ChamadoListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'titulo', 'cliente', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
+  queryField = new FormControl();
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
@@ -29,6 +32,14 @@ export class ChamadoListComponent implements OnInit {
 
   findAll(): void {
     this.service.findAll().subscribe(resposta => {
+      this.ELEMENT_DATA = resposta;
+      this.dataSource = new MatTableDataSource<Chamado>(resposta);
+      this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  findAllByTitulo(): void{  
+    this.service.findAllByTitulo(this.queryField.value).subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<Chamado>(resposta);
       this.dataSource.paginator = this.paginator;
