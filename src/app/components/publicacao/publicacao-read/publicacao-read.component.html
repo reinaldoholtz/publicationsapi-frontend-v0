@@ -1,0 +1,93 @@
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Leitura da publicação</h1>
+    <img class="full-width" src="assets/img/chamado-create.svg" alt="publicacao image">
+ 
+    <form class="form">
+       <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Título da publicação</mat-label>
+         <input 
+         [disabled]="true"
+         [(ngModel)]="publicacao.orgao"
+         name="orgao"
+         class="orgao"
+         matInput>
+       </mat-form-field>
+    </form>
+ 
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Unidade</mat-label>
+          <input 
+          [disabled]="true"
+          [(ngModel)]="publicacao.unidade"
+          name="unidade"
+          class="unidade"
+          matInput>
+        </mat-form-field>
+    </form>
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Localidade</mat-label>
+          <input 
+          [disabled]="true"
+          [(ngModel)]="publicacao.localidade"
+          name="localidade"
+          class="localidade"
+          matInput>
+        </mat-form-field>
+    </form>
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Tipo</mat-label>
+          <input 
+          [disabled]="true"
+          [(ngModel)]="publicacao.tipo"
+          name="tipo"
+          class="tipo"
+          matInput>
+        </mat-form-field>
+    </form>
+ 
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Número do Processo</mat-label>
+          <input 
+          [disabled]="true"
+          [(ngModel)]="publicacao.numeroProcesso"
+          name="numeroProcesso"
+          class="numeroProcesso"
+          matInput>
+        </mat-form-field>
+    </form>
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Data da Publicação</mat-label>
+          <input 
+          [disabled]="true"
+          [(ngModel)]="publicacao.dataPublicacao"
+          name="dataPublicacao"
+          class="dataPublicacao" 
+          matInput>
+        </mat-form-field>
+    </form>
+
+    <form class="form">  
+       <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Descrição</mat-label>
+         <textarea 
+         [disabled]="true"
+         [(ngModel)]="publicacao.descricao"
+         name="descricao"
+         class="descricao" 
+         matInput 
+         ></textarea>
+       </mat-form-field>
+    </form>
+ 
+    <button routerLink="../../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Retornar</button>
+ 
+    <p class="full-width"></p>
+ </div>
