@@ -14,10 +14,8 @@ export class AuthGuard  {
     let authenticated = this.authService.isAuthenticated();
 
     if(authenticated) {
-      console.log("AuthGuard SIM autenticado - CONTINUA");
       return true;
-    } else {
-      console.log("AuthGuard NAO autenticado - DIRECIONA LOGIN");
+    } else { 
       this.router.navigate(['login']);
       return false
     }    

@@ -29,20 +29,20 @@ export class AuthService {
     });
   }
 
+  save(creds: Credenciais) {       
+    return this.http.post(`${API_CONFIG.baseUrl}/v1/users`, creds, {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
+
   successfulLogin(authToken: string) {
     localStorage.setItem('token', authToken);
   }
 
   isAuthenticated() {
     let token = localStorage.getItem('token')
-    if(token != null) { 
-      console.log("AuthService CHECA TOKEN EXPIRADO sim OU nao ");
-      let checa = this.jwtService.isTokenExpired(token);
-      if (checa){
-        console.log("AuthService TOKEN EXPIRADO");
-      }else{
-        console.log("AuthService TOKEN NAO EXPIRADO");
-      }
+    if(token != null) {       
       return !this.jwtService.isTokenExpired(token)
     }
     return false

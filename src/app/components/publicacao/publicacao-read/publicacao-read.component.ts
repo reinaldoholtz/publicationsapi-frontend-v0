@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PublicacaoService } from 'src/app/services/publicacao.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-publicacao-read',
@@ -19,6 +20,7 @@ export class PublicacaoReadComponent implements OnInit {
     tipo:     '',
     numeroProcesso:     '',
     descricao: '',
+    documento: '',
     dataPublicacao: '',
   } 
 
@@ -26,19 +28,23 @@ export class PublicacaoReadComponent implements OnInit {
     private publicacaoService: PublicacaoService,
     private toastService:    ToastrService,
     private route: ActivatedRoute,
+    private location: Location,   
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.publicacao.id = this.route.snapshot.paramMap.get('id');
     this.findById();
   }
 
   findById(): void {
-    console.log("PublicacaoReadComponent - this.publicacao.id = ",this.publicacao.id);
     this.publicacaoService.findById(this.publicacao.id).subscribe(resposta => {
       this.publicacao = resposta;
     }, ex => {
       this.toastService.error(ex.error.error);
     })
   }   
+ 
+  onCancel() {
+    this.location.back();    
+  }
 }

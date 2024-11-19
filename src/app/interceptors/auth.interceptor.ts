@@ -21,7 +21,6 @@ export class AuthInterceptor implements HttpInterceptor {
         request.clone({ headers: request.headers.set('Authorization', `Bearer ${token}`) });
         return next.handle(cloneReq);
     } else {
-      console.log("AuthInterceptor TOKEN NAO VALIDO : "+token);
       return next.handle(request);
     }    
   }
