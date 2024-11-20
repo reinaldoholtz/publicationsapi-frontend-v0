@@ -21,7 +21,7 @@ export class PublicacaoListComponent implements OnInit {
   pageIndex = 0;
   pageSize = 10; 
 
-  columnsToDisplay: string[] = ['id', 'orgao', 'unidade', 'localidade', 'tipo', 'numeroProcesso', 'dataPublicacao','descricao', 'acoes'];
+  columnsToDisplay: string[] = ['orgao', 'unidade', 'localidade', 'tipo', 'numeroProcesso', 'dataPublicacao','descricao', 'acoes'];
 
   dataSource = new MatTableDataSource<Publicacao>(this.ELEMENT_DATA);
 
