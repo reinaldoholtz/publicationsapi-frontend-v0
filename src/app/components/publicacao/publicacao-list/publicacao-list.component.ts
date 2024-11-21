@@ -13,7 +13,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./publicacao-list.component.css']
 })
 export class PublicacaoListComponent implements OnInit {  
-  isDataLoaded = false;
+  isShowTable = false;
+  isShowSpinner = false;
   ELEMENT_DATA: Publicacao[] = [];
   FILTERED_DATA: Publicacao[] = [];
   totalElements: number;
@@ -51,23 +52,26 @@ export class PublicacaoListComponent implements OnInit {
   }
  
   findAllByDescription(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 10 }): void{   
+    this.isShowTable = false; 
+    this.isShowSpinner = true;
     this.service.findAllByDescription(this.queryField.value,pageEvent.pageIndex, pageEvent.pageSize).subscribe(
-      resposta => {
-        this.ELEMENT_DATA = resposta.publications;
+      response => {
+        this.ELEMENT_DATA = response.publications;
         this.dataSource = new MatTableDataSource<Publicacao>(this.ELEMENT_DATA);
-        this.totalElements = resposta.totalElements;
-        this.totalPages = resposta.totalPages;
+        this.totalElements = response.totalElements;
+        this.totalPages = response.totalPages;
         this.pageIndex = pageEvent.pageIndex;
-        this.pageSize = pageEvent.pageSize;
-        this.isDataLoaded = true;    
-        if(resposta.totalElements === 0){
-          this.isDataLoaded = false;
+        this.pageSize = pageEvent.pageSize;  
+        this.isShowTable = true; 
+        this.isShowSpinner = false; 
+        if(response.totalElements === 0){
           this.toastService.info('Dados de publicações não encontrado, tente novamente.'); 
         }
       },
-      erro => {
-        this.isDataLoaded = false; 
-        this.toastService.error('Erro ao carregar publicações, tente novamente.'+erro.status);           
+      error => {
+        this.isShowTable = false; 
+        this.isShowSpinner = false;
+        this.toastService.error('Erro ao carregar publicações, tente novamente. '+error.status);           
       }
     );
   }  

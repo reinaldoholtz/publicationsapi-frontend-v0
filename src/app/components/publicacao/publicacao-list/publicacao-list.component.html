@@ -1,20 +1,24 @@
 <div class="container">
 
-   <h1>Listando Publicações</h1>
+   <h1>Pesquisa de Publicações</h1>
  
    <mat-form-field>
        <mat-label>Pesquisa</mat-label>
        <input matInput type="search" 
-       appearance="standard" 
-       placeholder="Digite sua pesquisa" 
-       maxlength="100"
-       [formControl]="queryField">
+            appearance="standard" 
+            placeholder="Digite sua pesquisa" 
+            maxlength="100"
+            [formControl]="queryField">
        <button (click)="findAllByDescription()" matSuffix mat-icon-button aria-label="Pesquisa">
-         <mat-icon>search</mat-icon>
+            <mat-icon>search</mat-icon>
        </button>
    </mat-form-field>   
 
-   <div *ngIf="isDataLoaded" class="mat-elevation-z8">
+   <div *ngIf="isShowSpinner" class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+
+   <div *ngIf="isShowTable" class="mat-elevation-z8">
 
     <mat-form-field appearance="outline">
         <mat-label>Filter</mat-label>
