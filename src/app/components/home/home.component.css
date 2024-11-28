@@ -1,51 +1,35 @@
-.card {
-   width: 90%;
-   margin: 1rem auto;
-   background-color: rgb(235, 235, 235);
-}
-
-img {
-   height: 20rem;
-}
-
-body {
-   font-family: Arial, sans-serif;
+html, body {
    margin: 0;
    padding: 0;
+   width: 100%;
+   height: 100%;
 }
 
 .container {
-   background: linear-gradient(180deg, rgb(146, 143, 146) 0%, rgb(102, 106, 104) 0%, rgb(149, 183, 166) 100%);
-   color: white;
-   padding: 40px;
-   text-align: center;
-}
-
-/* Estilos para a seção de conteúdo */
-.content-wrapper {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 40px;
-   max-width: 1200px;
+   width: 90%;
    margin: auto;
+   background: rgba(225, 221, 221, 0.5); /* Fundo semitransparente para destacar o texto */
+   padding: 2rem;
+   border-radius: 8px;
 }
 
-/* Estilos para os blocos de conteúdo */
+.content-wrapper {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 1.5rem;
+}
+
 .content-block {
-   flex: 1 1 300px;
-   max-width: 300px;
+   background: rgba(255, 255, 255, 0.8);
+   color: #333;
+   padding: 1rem;
+   border-radius: 8px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para os títulos */
-.content-block h3 {
-   font-size: 1.5em;
-   color: #ffd700; /* Cor dourada para destacar os títulos */
-}
-
-/* Estilos para os parágrafos */
-.content-block p {
-   font-size: 1em;
-   line-height: 1.6;
-   color: #f0f0f0; /* Cor clara para melhor contraste */
+.footer {
+   margin-top: 2rem;
+   text-align: center;
+   color: #ddd;
+   font-weight: bold;
 }

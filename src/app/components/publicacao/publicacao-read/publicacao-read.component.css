@@ -3,6 +3,7 @@
     margin: auto auto 3rem auto;
     padding: 1rem;
     border-radius: 1rem;
+    background: #F0F4F3;
  }
  
  .full-width {
@@ -18,12 +19,12 @@
  }
 
 .orgao, .unidade, .localidade, .tipo, .numeroProcesso, .dataPublicacao, .descricao {
-    font-weight: bold;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2); 
 }
   
  .descricao {
-    min-height: 6rem;
-    max-height: 10rem;   
+    min-height: 15rem;
+    max-height: 20rem;   
  }
 
  button {

@@ -6,6 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Publicacao } from 'src/app/models/publicacao';
 import { StateService } from 'src/app/services/state.service';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { PublicacaoReadDialogComponent } from '../publicacao-read-dialog/publicacao-read-dialog.component';
 
 @Component({
   selector: 'app-publicacao-list',
@@ -20,7 +22,7 @@ export class PublicacaoListComponent implements OnInit {
   totalElements: number;
   totalPages: number;
   pageIndex = 0;
-  pageSize = 10; 
+  pageSize = 5; 
 
   columnsToDisplay: string[] = ['orgao', 'unidade', 'localidade', 'tipo', 'numeroProcesso', 'dataPublicacao','descricao', 'acoes'];
 
@@ -34,6 +36,7 @@ export class PublicacaoListComponent implements OnInit {
     private service: PublicacaoService,
     private stateService: StateService,
     private toastService: ToastrService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -51,7 +54,7 @@ export class PublicacaoListComponent implements OnInit {
     }       
   }
  
-  findAllByDescription(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 10 }): void{   
+  findAllByDescription(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 5 }): void{   
     this.isShowTable = false; 
     this.isShowSpinner = true;
     this.service.findAllByDescription(this.queryField.value,pageEvent.pageIndex, pageEvent.pageSize).subscribe(
@@ -76,33 +79,22 @@ export class PublicacaoListComponent implements OnInit {
     );
   }  
 
-  /* loadPublications(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 10 }): void { 
-      this.service.findAll(pageEvent.pageIndex, pageEvent.pageSize).subscribe(
-        resposta => {  
-          this.ELEMENT_DATA = resposta.publications; // Acesse o array de publicações diretamente
-          this.dataSource = new MatTableDataSource<Publicacao>(this.ELEMENT_DATA);
-          this.totalElements = resposta.totalElements; // Armazena o total de elementos
-          this.totalPages = resposta.totalPages; // Armazena o total de páginas
-          this.pageIndex = pageEvent.pageIndex;
-          this.pageSize = pageEvent.pageSize;
-          // this.dataSource.paginator = this.paginator;
-        },
-        error => {
-          console.error("Erro ao carregar publicações: ", error);
-        }
-      );
-  }   */
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   } 
  
-  onRead(): void {
-    this.stateService.setState({
-      pageIndex: this.pageIndex,
-      pageSize: this.pageSize,
-      query: this.queryField.value,
-    });    
+  onRead(publication: any): void {  
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true; 
+    dialogConfig.panelClass = 'custom-dialog-container';
+       
+    dialogConfig.data = {
+        data: publication
+    };
+
+    this.dialog.open(PublicacaoReadDialogComponent, dialogConfig);
   }
 }

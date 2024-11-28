@@ -12,16 +12,7 @@ export class AuthService {
   jwtService: JwtHelperService = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
-
-  /*
-    AQUI PRA USAR COM A VERSAO DO CURSO 
-    authenticate(creds: Credenciais) {       
-    return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
-      observe: 'response',
-      responseType: 'text'
-    });
-  } */
-
+  
   authenticate(creds: Credenciais) {       
     return this.http.post(`${API_CONFIG.baseUrl}/v1/users/auth`, creds, {
       observe: 'response',

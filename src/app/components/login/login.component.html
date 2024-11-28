@@ -1,64 +1,69 @@
 <div class="container">
-   <form class="form mat-elevation-z8">
+   <!-- <form class="form mat-elevation-z8"> -->
+   <div class="form-background">   
+      <div class="form mat-elevation-z8">   
+         
+         <h1 *ngIf="!isNewUser">Login</h1>
+         <h1 *ngIf="isNewUser">Novo Usuário</h1>
 
-      <h1 *ngIf="!isNewUser">Login</h1>
-      <h1 *ngIf="isNewUser">Novo Usuário</h1>
+         <mat-form-field *ngIf="isNewUser" class="full-width" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input 
+            [formControl]="nome"
+            required
+            [(ngModel)]="creds.name" 
+            name="nome" 
+            matInput 
+            placeholder="Nome completo">
+            <mat-icon matSuffix>name</mat-icon>
+         </mat-form-field>
 
-      <!-- <img src="assets/img/login-image.svg" alt="PUB"> -->
+         <mat-form-field class="full-width" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input 
+            [formControl]="email"
+            required
+            [(ngModel)]="creds.email" 
+            name="email" 
+            matInput 
+            placeholder="Ex. fulano@mail.com">
+            <mat-icon matSuffix>email</mat-icon>
+         </mat-form-field>      
 
-      <mat-form-field *ngIf="isNewUser" class="full-width" appearance="outline">
-         <mat-label>Nome</mat-label>
-         <input 
-         [formControl]="nome"
-         required
-         [(ngModel)]="creds.name" 
-         name="nome" 
-         matInput 
-         placeholder="Nome completo">
-         <mat-icon matSuffix>name</mat-icon>
-      </mat-form-field>
+         <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input 
+            [formControl]="senha"
+            required
+            [(ngModel)]="creds.password" 
+            name="senha" 
+            type="password" 
+            matInput 
+            placeholder="Ex. 123">
+            <mat-icon matSuffix>password</mat-icon>
+         </mat-form-field>
 
-      <mat-form-field class="full-width" appearance="outline">
-         <mat-label>E-mail</mat-label>
-         <input 
-         [formControl]="email"
-         required
-         [(ngModel)]="creds.email" 
-         name="email" 
-         matInput 
-         placeholder="Ex. fulano@mail.com">
-         <mat-icon matSuffix>email</mat-icon>
-      </mat-form-field>      
+         <mat-form-field *ngIf="isNewUser" class="full-width" appearance="outline">
+            <mat-label>Confirmar senha</mat-label>
+            <input 
+            [formControl]="confirmaSenha"
+            required
+            [(ngModel)]="creds.passwordMatch" 
+            name="confirmaSenha" 
+            type="password" 
+            matInput 
+            placeholder="Ex. 123">
+            <mat-icon matSuffix>password</mat-icon>
+         </mat-form-field>
 
-      <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Senha</mat-label>
-         <input 
-         [formControl]="senha"
-         required
-         [(ngModel)]="creds.password" 
-         name="senha" 
-         type="password" 
-         matInput 
-         placeholder="Ex. 123">
-         <mat-icon matSuffix>password</mat-icon>
-      </mat-form-field>
+         <button (click)="login()" [disabled]="!validatefields()" class="full-width mat-elevation-z4" mat-stroked-button color="primary">Login</button>
+         <p *ngIf="!isNewUser" class="txt-white">Novo usuário? <a mat-button (click)=subscribeNewUser(true)>Cadastre-se</a></p>
+         <p *ngIf="isNewUser" class="txt-white">Já é usuário?  <a mat-button (click)=subscribeNewUser(false)>Logar</a></p>
+      </div>
+   </div>
 
-      <mat-form-field *ngIf="isNewUser" class="full-width" appearance="outline">
-         <mat-label>Confirmar senha</mat-label>
-         <input 
-         [formControl]="confirmaSenha"
-         required
-         [(ngModel)]="creds.passwordMatch" 
-         name="confirmaSenha" 
-         type="password" 
-         matInput 
-         placeholder="Ex. 123">
-         <mat-icon matSuffix>password</mat-icon>
-      </mat-form-field>
-
-      <button (click)="login()" [disabled]="!validatefields()" class="full-width mat-elevation-z4" mat-stroked-button color="primary">Login</button>
-      <p *ngIf="!isNewUser" class="txt-white">Novo usuário? <a mat-button (click)=subscribeNewUser(true)>Criar conta</a></p>
-      <p *ngIf="isNewUser" class="txt-white">Já é usuário?  <a mat-button (click)=subscribeNewUser(false)>Logar</a></p>
-   </form>
-
+   <!-- Lado direito: Imagem -->
+   <div class="image">
+      <img src="/assets/img/login-background.webp" alt="Imagem de fundo do login">
+   </div>
 </div>

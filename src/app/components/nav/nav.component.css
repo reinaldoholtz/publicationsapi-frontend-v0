@@ -3,9 +3,11 @@
 }
 
 .sidenav {
-   width: 13rem;
+   width: 14rem;
    color: white;
-   background: linear-gradient(180deg, rgb(146, 143, 146) 0%, rgb(102, 106, 104) 0%, rgb(149, 183, 166) 100%);
+   background-color: #F0F4F3;
+   font-family: 'Roboto', sans-serif; 
+   font-size: 16px;
 }
 
 img {
@@ -23,7 +25,6 @@ img {
 }
 
 .menu {
-   margin: 1rem 0 0 1rem;
-   color: white;   
-   background: linear-gradient(180deg, rgb(146, 143, 146) 0%, rgb(102, 106, 104) 0%, rgb(149, 183, 166) 100%);
+   margin: 1rem 0 0 1rem;     
+   background-color: #F0F4F3;
 }

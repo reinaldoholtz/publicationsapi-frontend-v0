@@ -1,46 +1,66 @@
 .container {
-   height: 100%;   
-   background-image: url('/assets/img/login-background.webp');
-   background-size: cover;          
-   background-repeat: no-repeat;    
-   background-position: center;     
+   display: flex; /* Cria layout em duas colunas */
+   height: 100vh; /* Altura total da tela */
+   background-color: #F0F4F3;
+   justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.form-background {
+   flex: 0.5; /* Ocupa 50% da largura */
    display: flex;
-   align-items: center;
-   justify-content: center;
+   justify-content: center; /* Centraliza o formulário */
+   align-items: center; /* Alinha verticalmente no centro */
+   padding: 2rem; /* Adiciona padding ao redor do formulário */
 }
 
 .form {
-   width: 30rem;
-   margin: auto;
-   background-color: rgb(235, 235, 235);
-   padding: 4rem 1rem;
-   border-radius: 2rem;
+   max-width: 30rem; /* Define largura máxima */
+   width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
+   background-color: rgba(235, 235, 235, 0.9); /* Fundo com transparência */
+   padding: 3rem 1rem;
+   border-radius: 1rem;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+   display: flex;
+   flex-direction: column; /* Alinha os elementos verticalmente */
+   gap: 1.5rem; /* Adiciona espaçamento entre os campos */
 }
 
 h1 {
-   width: 100%;
    text-align: center;
-   
-}
-
-img {
-   height: 15rem;
-   width: 100%;
-   margin: 1.5rem auto 1.5rem auto;
-}
-
-.full-width {
-   width: 100%;
 }
 
 button {
-   margin-top: 1.5rem;
+   margin-top: 1.5rem; /* Adiciona margem entre o botão e o último campo */
 }
 
-mat-icon {
-   opacity: .6;
+/* Lado direito: Imagem */
+.image {
+   flex: 1.5; /* Ocupa 50% da largura */
+   background-image: url('/assets/img/login-background.webp');
+   background-size: initial; /* Faz a imagem cobrir toda a área */
+   background-position: center; /* Centraliza a imagem */  
+   height: 100vh; /* Garante que a imagem ocupe toda a altura da tela */
+   overflow: hidden;
 }
 
-p {
-   margin-top: 1.5rem;
+.image img {
+   width: 100%;
+   height: 100%;
+   object-fit: inherit; /* Ajusta a imagem para preencher o espaço */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+   .container {
+      flex-direction: column; /* Empilha elementos em telas pequenas */
+   }
+
+   .form {
+      width: 90%; /* Formulário ocupa quase toda a largura */
+   }
+
+   .image {
+      height: auto; /* Ajusta a altura da imagem */
+      display: none; /* Oculta a imagem em telas pequenas */
+   }
 }

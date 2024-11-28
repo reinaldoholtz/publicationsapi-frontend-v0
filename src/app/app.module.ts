@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
@@ -26,6 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Componentes do projeto
 import { NavComponent } from './components/nav/nav.component';
@@ -38,6 +41,8 @@ import { NgxMaskModule } from 'ngx-mask';
 
 import { PublicacaoListComponent } from './components/publicacao/publicacao-list/publicacao-list.component';
 import { PublicacaoReadComponent } from './components/publicacao/publicacao-read/publicacao-read.component';
+import { PtBrMatPaginatorIntl } from './shared/pt-br-mat-paginator-intl';
+import { PublicacaoReadDialogComponent } from './components/publicacao/publicacao-read-dialog/publicacao-read-dialog.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,8 @@ import { PublicacaoReadComponent } from './components/publicacao/publicacao-read
     HeaderComponent,
     LoginComponent,
     PublicacaoListComponent,
-    PublicacaoReadComponent
+    PublicacaoReadComponent,
+    PublicacaoReadDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +71,7 @@ import { PublicacaoReadComponent } from './components/publicacao/publicacao-read
     MatSnackBarModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatMenuModule,
     MatButtonModule,
     MatSelectModule,
     MatInputModule,
@@ -73,6 +80,7 @@ import { PublicacaoReadComponent } from './components/publicacao/publicacao-read
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
     MatProgressSpinnerModule,
     ToastrModule.forRoot({
       timeOut: 4000,
@@ -81,7 +89,10 @@ import { PublicacaoReadComponent } from './components/publicacao/publicacao-read
     }),
     NgxMaskModule.forRoot()
   ],
-  providers: [AuthInterceptorProvider],
+  providers: [
+    AuthInterceptorProvider,
+    { provide: MatPaginatorIntl, useClass: PtBrMatPaginatorIntl}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

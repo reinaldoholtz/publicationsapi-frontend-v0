@@ -1,12 +1,15 @@
 .container {
     width: 90%;
     margin: auto;
+    padding-bottom: 3rem;
  }
  
  table {
     width: 100%;
+    background-color: #F0F4F3;
+    border-radius: 2rem;
  }
- 
+
  mat-form-field {
     width: 100%;
  }
@@ -18,20 +21,37 @@
  h1 {
     width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
  }
   
  .read {
     color: red;
+    cursor: pointer;
  }
 
 table tr:hover {
-   background-color: #f0f0f0; /* Cor de fundo desejada ao passar o mouse */
+   background-color: #DFDFE0; 
 }
 
 .loading-spinner {
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 200px; /* ou ajuste conforme necessário */
+   height: 100px;
  }
+
+ .search-container {
+   display: flex;
+   justify-content: center; 
+   align-items: center;    
+   margin-bottom: 1.5rem;  
+   width: 100%;            
+}
+
+ .search-field {
+   background: transparent; 
+   border-radius: 8px;
+   max-width: 980px;
+   width: 100%;
+   margin: 0 auto;          
+ } 

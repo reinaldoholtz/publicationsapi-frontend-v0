@@ -1,0 +1,70 @@
+<div class="container mat-elevation-z8">
+    <h1 mat-dialog-title>Detalhe da Publicação</h1>
+    <mat-dialog-content class="dialog-content-custom">       
+        <div class="form-fields"> 
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Órgão</mat-label>
+                <input matInput [disabled]="true" [value]="publicacao.orgao" />
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Unidade</mat-label>
+                <input matInput [disabled]="true" [value]="publicacao.unidade" />
+            </mat-form-field>
+        </div>
+
+        <div class="form-fields">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Localidade</mat-label>
+                <input matInput [disabled]="true" [value]="publicacao.localidade" />
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Tipo</mat-label>
+                <input matInput [disabled]="true" [value]="publicacao.tipo" />
+            </mat-form-field>
+        </div>
+
+		<div class="form-fields">
+			<mat-form-field class="full-width" appearance="outline">
+			  <mat-label>Número do Processo</mat-label>
+			  <input matInput
+				  [disabled]="true"
+				  [value]="publicacao.numeroProcesso"
+				  class="numeroProcesso">
+			</mat-form-field>
+	
+			<mat-form-field class="full-width" appearance="outline">
+			  <mat-label>Data da Publicação</mat-label>
+			  <input matInput
+				  [disabled]="true"
+				  [value]="publicacao.dataPublicacao"
+				  class="dataPublicacao">
+			</mat-form-field>
+	    </div>
+
+        <div class="form-fields">
+		   <mat-form-field class="full-width" appearance="outline">
+			 <mat-label>Descrição</mat-label>
+			 <textarea matInput
+				 [disabled]="true"
+				 [value]="publicacao.descricao"
+				 class="descricao">
+			 </textarea>
+		   </mat-form-field>
+        </div>   
+
+	</mat-dialog-content>
+
+	<mat-dialog-actions>
+			<button (click)="close()" 
+				class="full-width mat-elevation-z4" 
+				mat-stroked-button 
+				color="warn">
+				<mat-icon>arrow_back</mat-icon>
+				Retornar
+			</button>
+	</mat-dialog-actions>
+
+    <p class="full-width"></p>
+</div>
