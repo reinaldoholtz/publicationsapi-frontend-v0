@@ -11,12 +11,12 @@
  .form-fields {
     display: flex;
     align-items: flex-start;
-    gap: 1rem; /* Define o espaçamento horizontal entre os campos */
+    gap: 0.5rem; /* Define o espaçamento horizontal entre os campos */
   }
  
  .full-width {
     width: 100%;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
  }
   
 .orgao, .unidade, .localidade, .tipo, .numeroProcesso, .dataPublicacao, .descricao {
@@ -24,8 +24,8 @@
 }
   
  .descricao {
-    min-height: 10rem;
-    max-height: 18rem;   
+    min-height: 15rem;
+    max-height: 20rem;   
     font-size: 0.875rem; /* Define o tamanho da fonte (14px, equivalente a 0.875rem) */
     line-height: 1.5;    /* Ajusta o espaçamento entre linhas para melhor legibilidade */
     overflow-y: auto;    /* Permite rolagem dentro do campo apenas */
@@ -35,16 +35,16 @@
     margin-top: .5rem;
  }
  
- p {
+ /* p {
     margin-top: 3rem;
     opacity: .5;
     text-align: center;
- }
+ } */
 
 ::ng-deep .custom-dialog-container {
     width: auto;
     height: auto;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 3rem;
     background-color: transparent;
     max-width: auto;
