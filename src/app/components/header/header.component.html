@@ -1,3 +1,46 @@
-<div class="container">
-   <!-- <h1 class="mat-elevation-z2">Publicações</h1> -->
-</div>
+<mat-toolbar class="mat-elevation-z0 custom-toolbar"> 
+   
+   <h1>
+      <span class="title">LawScope</span>
+   </h1>
+   <span class="spacer"></span>
+
+   <button mat-button routerLink="home">Início
+      <i class="material-icons">home</i>
+   </button>
+      
+   <button mat-button [matMenuTriggerFor]="menuPesquisa">Pesquisas
+      <i class="material-icons">search</i>
+   </button>
+   <mat-menu #menuPesquisa="matMenu">
+      <button mat-menu-item routerLink="publicacoes">Publicações</button>
+      <button mat-menu-item routerLink="publicacoes">Busca e apreensão</button>
+   </mat-menu>  
+   
+   <button mat-button [matMenuTriggerFor]="menuUsers">Usuários
+      <!-- <i class="material-icons">group</i> -->
+   </button>
+   <mat-menu #menuUsers="matMenu">
+      <button mat-menu-item routerLink="publicacoes">Manutenção de usuários</button>
+   </mat-menu>  
+
+   <button mat-button routerLink="home">Fale conosco
+      <!-- <mat-icon>contact_support</mat-icon> -->
+   </button>
+
+   <button mat-button routerLink="home">Sobre
+      <!-- <mat-icon>info</mat-icon> -->
+   </button>
+
+   <button mat-button [matMenuTriggerFor]="menuUser">Olá, {{ username }}
+      <i class="material-icons">person</i>
+   </button>
+   <mat-menu #menuUser="matMenu">
+      <button mat-menu-item routerLink="publicacoes">Minha conta</button>
+      <button mat-menu-item (click)="logout()">Sair
+         <mat-icon>logout</mat-icon>
+      </button>
+   </mat-menu>  
+ </mat-toolbar> 
+
+ 

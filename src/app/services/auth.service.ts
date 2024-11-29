@@ -12,18 +12,16 @@ export class AuthService {
   jwtService: JwtHelperService = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
-
-  /*
-    AQUI PRA USAR COM A VERSAO DO CURSO 
-    authenticate(creds: Credenciais) {       
-    return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
+  
+  authenticate(creds: Credenciais) {       
+    return this.http.post(`${API_CONFIG.baseUrl}/v1/users/auth`, creds, {
       observe: 'response',
       responseType: 'text'
     });
-  } */
+  }
 
-  authenticate(creds: Credenciais) {       
-    return this.http.post(`${API_CONFIG.baseUrl}/v1/users/auth`, creds, {
+  save(creds: Credenciais) {       
+    return this.http.post(`${API_CONFIG.baseUrl}/v1/users`, creds, {
       observe: 'response',
       responseType: 'text'
     });
@@ -35,14 +33,7 @@ export class AuthService {
 
   isAuthenticated() {
     let token = localStorage.getItem('token')
-    if(token != null) { 
-      console.log("AuthService CHECA TOKEN EXPIRADO sim OU nao ");
-      let checa = this.jwtService.isTokenExpired(token);
-      if (checa){
-        console.log("AuthService TOKEN EXPIRADO");
-      }else{
-        console.log("AuthService TOKEN NAO EXPIRADO");
-      }
+    if(token != null) {       
       return !this.jwtService.isTokenExpired(token)
     }
     return false

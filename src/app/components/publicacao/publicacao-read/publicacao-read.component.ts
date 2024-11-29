@@ -1,8 +1,10 @@
 import { Publicacao } from 'src/app/models/publicacao';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PublicacaoService } from 'src/app/services/publicacao.service';
+import { Location } from '@angular/common';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-publicacao-read',
@@ -19,6 +21,7 @@ export class PublicacaoReadComponent implements OnInit {
     tipo:     '',
     numeroProcesso:     '',
     descricao: '',
+    documento: '',
     dataPublicacao: '',
   } 
 
@@ -26,19 +29,25 @@ export class PublicacaoReadComponent implements OnInit {
     private publicacaoService: PublicacaoService,
     private toastService:    ToastrService,
     private route: ActivatedRoute,
-  ) { }
+    private location: Location,   
+    private dialogRef: MatDialogRef<PublicacaoReadComponent>,
+    @Inject(MatDialog) data 
+  ) { this.publicacao.id = data.id; }
 
-  ngOnInit(): void {
-    this.publicacao.id = this.route.snapshot.paramMap.get('id');
-    this.findById();
+  ngOnInit(): void { 
+     this.publicacao.id = this.route.snapshot.paramMap.get('id');
+     this.findById();
   }
 
   findById(): void {
-    console.log("PublicacaoReadComponent - this.publicacao.id = ",this.publicacao.id);
     this.publicacaoService.findById(this.publicacao.id).subscribe(resposta => {
       this.publicacao = resposta;
     }, ex => {
       this.toastService.error(ex.error.error);
     })
   }   
+ 
+  onCancel() {
+    this.location.back();   
+  }
 }

@@ -1,13 +1,31 @@
-.container {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+.title {
+   font-size: 1.5rem; /* Aumenta o tamanho do texto */
+  
+   color: #333; /* Ajusta a cor, se necessário */
+  
+   letter-spacing: 1px; /* Adiciona espaçamento entre as letras (opcional) */
+   text-align: center; /* Centraliza o texto, se necessário */
 }
 
-h1 {
-   margin-top: 1rem;
-   border: 1px solid rgb(161, 159, 159);
-   padding: 1rem 10%;
-   border-radius: 0rem;
-   width: 60%;
-}
+ .spacer {
+   flex: 1 1 auto;
+ }
+ 
+ .container {
+   margin-top: 60px;
+ }
+
+ .custom-toolbar{
+   height: 70px;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   background-color: #F0F4F3;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 100;
+   display: flex;
+   justify-content: flex-end; /* Alinha tudo à direita */
+   padding-right: 16px; /* Adiciona um espaço à direita */
+ }

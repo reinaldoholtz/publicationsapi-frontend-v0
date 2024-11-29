@@ -1,0 +1,58 @@
+.container {
+    width: 1000px;
+    height: auto; /* Permite ajustar dinamicamente a altura */
+    max-height: 100vh; /* Limita a altura máxima à altura da viewport */
+    overflow: hidden; /* Esconde qualquer conteúdo que exceda a área visível */
+    padding: 2rem;
+    border-radius: 1rem;
+    background: #F0F4F3;
+ }
+
+ .form-fields {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem; /* Define o espaçamento horizontal entre os campos */
+  }
+ 
+ .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+ }
+  
+.orgao, .unidade, .localidade, .tipo, .numeroProcesso, .dataPublicacao, .descricao {
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2); 
+}
+  
+ .descricao {
+    min-height: 10rem;
+    max-height: 18rem;   
+    font-size: 0.875rem; /* Define o tamanho da fonte (14px, equivalente a 0.875rem) */
+    line-height: 1.5;    /* Ajusta o espaçamento entre linhas para melhor legibilidade */
+    overflow-y: auto;    /* Permite rolagem dentro do campo apenas */
+ }
+
+ button {
+    margin-top: .5rem;
+ }
+ 
+ p {
+    margin-top: 3rem;
+    opacity: .5;
+    text-align: center;
+ }
+
+::ng-deep .custom-dialog-container {
+    width: auto;
+    height: auto;
+    border-radius: 2rem;
+    padding: 3rem;
+    background-color: transparent;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+.dialog-content-custom {
+    padding: 0.5rem 1rem;
+    padding-top: inherit;
+    max-height: calc(100vh - 10rem); 
+}

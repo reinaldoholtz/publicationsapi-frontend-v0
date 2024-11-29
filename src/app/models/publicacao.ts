@@ -6,5 +6,6 @@ export interface Publicacao {
    tipo:              string;
    numeroProcesso:    string;
    descricao:         string;
+   documento:         string;
    dataPublicacao:    string;
 }

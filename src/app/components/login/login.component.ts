@@ -13,31 +13,74 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
   creds: Credenciais = {
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    passwordMatch: ''
   }
 
+  nome = new UntypedFormControl(null, Validators.maxLength(60));
   email = new UntypedFormControl(null, Validators.email);
-  senha = new UntypedFormControl(null, Validators.minLength(3));
+  senha = new UntypedFormControl(null, Validators.minLength(8));
+  confirmaSenha = new UntypedFormControl(null, Validators.minLength(8));
+  isNewUser: boolean = false;
 
   constructor(
-    private toast: ToastrService,
+    private toastService: ToastrService,
     private service: AuthService,
     private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
-  logar() {
-    this.service.authenticate(this.creds).subscribe(resposta => {
-      this.service.successfulLogin(resposta.headers.get('Authorization').substring(7));
-      this.router.navigate([''])
-    }, () => {
-      this.toast.error('Usuário e/ou senha inválidos');
-    })
+  login() {
+    if (!this.isNewUser){      
+        this.service.authenticate(this.creds).subscribe(resposta => {
+          this.service.successfulLogin(resposta.headers.get('Authorization').substring(7));
+          this.router.navigate([''])
+        }, () => {          
+          this.toastService.error('Usuário e/ou senha inválidos.');
+        })          
+    } else {
+      if (this.checkPassword()){
+        this.service.save(this.creds).subscribe(
+          resposta => {
+            if (resposta.status === 201 ) {
+              this.toastService.success('Usuário criado com sucesso');
+              this.isNewUser = false;
+            }
+          },
+          erro => {
+            this.isNewUser = true;
+            if (erro.status === 409) {
+              this.toastService.error('Email já cadastrado, tente novamente.'+erro.status);
+            } else {
+              this.toastService.error('Erro ao criar usuário, tente novamente.'+erro.status);
+            }
+          }
+        );
+      }  
+    }
+   
   }
 
-  validaCampos(): boolean {
+  validatefields(): boolean {
+    if(this.isNewUser){
+      return this.email.valid && this.senha.valid && this.nome.valid && this.senha.valid && this.confirmaSenha.valid 
+    }
     return this.email.valid && this.senha.valid
   }
 
+  checkPassword(){
+    if (this.senha.value !== this.confirmaSenha.value) {
+      this.toastService.error('As senhas não são iguais, tente novamente.');
+      return false;
+    }
+    return true;
+  }
+
+  subscribeNewUser(param: any): void{    
+    this.isNewUser = param;
+  }
+
+  
 }
