@@ -14,23 +14,28 @@
 }
 
 .form {
-   max-width: 30rem; /* Define largura máxima */
+   max-width: 25rem; /* Define largura máxima */
+   max-height: 25rem;
    width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
-   background-color: rgba(235, 235, 235, 0.9); /* Fundo com transparência */
-   padding: 3rem 1rem;
-   border-radius: 1rem;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+   padding: 1rem 1rem;
    display: flex;
    flex-direction: column; /* Alinha os elementos verticalmente */
-   gap: 1.5rem; /* Adiciona espaçamento entre os campos */
+   gap: 1.0rem; /* Adiciona espaçamento entre os campos */
 }
 
 h1 {
-   text-align: center;
+   text-align: left;
 }
 
 button {
-   margin-top: 1.5rem; /* Adiciona margem entre o botão e o último campo */
+   width: 100%;
+   margin-top: 1.5rem;
+   max-width: 25.0rem;
+   max-height: 2.0rem;
+}
+
+.txt-link-button{
+   margin-top: 1.0rem;
 }
 
 /* Lado direito: Imagem */
