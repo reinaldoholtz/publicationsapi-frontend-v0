@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { API_CONFIG } from '../config/api.config';
 import { Publicacao } from '../models/publicacao';
 import { PublicacaoPage } from '../models/publicacao-page';
 import { environment } from 'src/environments/environment';
