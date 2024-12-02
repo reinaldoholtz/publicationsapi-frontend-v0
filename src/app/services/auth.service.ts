@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { API_CONFIG } from '../config/api.config';
 import { Credenciais } from '../models/credenciais';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +15,14 @@ export class AuthService {
   constructor(private http: HttpClient) { }
   
   authenticate(creds: Credenciais) {       
-    return this.http.post(`${API_CONFIG.baseUrl}/v1/users/auth`, creds, {
+    return this.http.post(`${environment.baseUrl}/v1/users/auth`, creds, {
       observe: 'response',
       responseType: 'text'
     });
   }
 
   save(creds: Credenciais) {       
-    return this.http.post(`${API_CONFIG.baseUrl}/v1/users`, creds, {
+    return this.http.post(`${environment.baseUrl}/v1/users`, creds, {
       observe: 'response',
       responseType: 'text'
     });
