@@ -37,7 +37,7 @@ table tr:hover {
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 100px;
+   margin-top: 5rem;
  }
 
  .search-container {

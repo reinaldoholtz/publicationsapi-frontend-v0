@@ -17,8 +17,8 @@
 
 <div class="container">
    <div *ngIf="isShowSpinner" class="loading-spinner">
-      <mat-spinner></mat-spinner>
-    </div>
+      <mat-spinner [diameter]="60" color="warn"></mat-spinner>
+   </div>
 
    <div *ngIf="isShowTable">     
  

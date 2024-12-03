@@ -53,7 +53,7 @@ import { PublicacaoReadDialogComponent } from './components/publicacao/publicaca
     LoginComponent,
     PublicacaoListComponent,
     PublicacaoReadComponent,
-    PublicacaoReadDialogComponent
+    PublicacaoReadDialogComponent,
   ],
   imports: [
     BrowserModule,
