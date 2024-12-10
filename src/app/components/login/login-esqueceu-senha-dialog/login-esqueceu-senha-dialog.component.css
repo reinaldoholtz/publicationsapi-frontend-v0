@@ -1,0 +1,15 @@
+.container {
+    background-color: #F0F4F3;
+    padding: 10px; /* Espaçamento interno */
+}
+
+.email-field {
+    width: 100%; /* O campo de e-mail ocupa toda a largura */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 1rem; /* Espaçamento entre o campo de e-mail e os botões */
+}

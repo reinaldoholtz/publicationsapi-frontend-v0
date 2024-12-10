@@ -1,0 +1,62 @@
+.title {
+    height: 5vh; /* Define 10% da altura da viewport */
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: #F0F4F3;
+    letter-spacing: 1px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.titlepwd{
+   padding: 5rem;
+}
+
+.container {
+    height: 90vh; 
+    display: flex;
+    justify-content: center;    
+    background-color: white;   
+}
+ 
+ .form-background-b {
+    flex: 0.2; /* Ocupa 50% da largura */
+    display: flex;
+    background-color: #F0F4F3;
+    justify-content: center; /* Centraliza o formulário */
+    align-items: center; /* Alinha verticalmente no centro */
+    margin-top: 10rem; /* Ajusta o espaço superior */
+    margin-bottom: 30rem; /* Ajusta o espaço inferior */
+ }
+ 
+ .form {
+    max-width: 25rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+}
+
+ button {
+    width: 100%;
+    margin-top: 1.5rem;
+    max-width: 25.0rem;
+    max-height: 2.0rem;
+ }
+   
+ /* Responsividade */
+ @media (max-width: 768px) {
+    .container {
+       flex-direction: column; /* Empilha elementos em telas pequenas */
+    }
+ 
+    .form {
+       width: 90%; /* Formulário ocupa quase toda a largura */
+    }
+ 
+    .image {
+       height: auto; /* Ajusta a altura da imagem */
+       display: none; /* Oculta a imagem em telas pequenas */
+    }
+ }
+ 

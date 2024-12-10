@@ -20,8 +20,22 @@ export class AuthService {
     });
   }
 
+  findByEmail(email: any) {
+    return this.http.get(`${environment.baseUrl}/v1/users/email/${email}`, {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
+
   save(creds: Credenciais) {       
     return this.http.post(`${environment.baseUrl}/v1/users`, creds, {
+      observe: 'response',
+      responseType: 'text'
+    });
+  }
+
+  saveResetPwd(creds: Credenciais) {       
+    return this.http.post(`${environment.baseUrl}/v1/users/reset_pwd`, creds, {
       observe: 'response',
       responseType: 'text'
     });
