@@ -4,7 +4,7 @@
     max-height: 100vh; /* Limita a altura máxima à altura da viewport */
     overflow: hidden; /* Esconde qualquer conteúdo que exceda a área visível */
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 0rem;
     background: #F0F4F3;
  }
 
@@ -16,7 +16,6 @@
  
  .full-width {
     width: 100%;
-    /* margin-bottom: 1rem; */
  }
   
 .orgao, .unidade, .localidade, .tipo, .numeroProcesso, .dataPublicacao, .descricao {
@@ -44,7 +43,7 @@
 ::ng-deep .custom-dialog-container {
     width: auto;
     height: auto;
-    border-radius: 1rem;
+    border-radius: 0rem;
     padding: 3rem;
     background-color: transparent;
     max-width: auto;

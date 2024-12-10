@@ -43,6 +43,8 @@ import { PublicacaoListComponent } from './components/publicacao/publicacao-list
 import { PublicacaoReadComponent } from './components/publicacao/publicacao-read/publicacao-read.component';
 import { PtBrMatPaginatorIntl } from './shared/pt-br-mat-paginator-intl';
 import { PublicacaoReadDialogComponent } from './components/publicacao/publicacao-read-dialog/publicacao-read-dialog.component';
+import { LoginEsqueceuSenhaDialogComponent } from './components/login/login-esqueceu-senha-dialog/login-esqueceu-senha-dialog.component';
+import { LoginRedefineSenhaComponent } from './components/login/login-redefine-senha/login-redefine-senha.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { PublicacaoReadDialogComponent } from './components/publicacao/publicaca
     LoginComponent,
     PublicacaoListComponent,
     PublicacaoReadComponent,
-    PublicacaoReadDialogComponent
+    PublicacaoReadDialogComponent,
+    LoginEsqueceuSenhaDialogComponent,
+    LoginRedefineSenhaComponent,
   ],
   imports: [
     BrowserModule,

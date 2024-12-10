@@ -56,10 +56,10 @@
             <mat-icon matSuffix>password</mat-icon>
          </mat-form-field>
          <div>
-            <button (click)="login()" [disabled]="!validatefields()" class="full-width mat-elevation-z4" mat-stroked-button color="primary">Login</button>
+            <button (click)="login()" [disabled]="!validatefields()" class="full-width mat-elevation-z4" mat-stroked-button color="primary">Entrar</button>
             <div>
                <p *ngIf="!isNewUser" class="txt-link-button">Novo usuário? <a mat-button (click)=subscribeNewUser(true)>Cadastre-se</a> | 
-                  <a mat-button (click)=subscribeNewUser(true)>Esqueceu a senha?</a>
+                  <a mat-button (click)=resetPassword()>Esqueceu a senha?</a>
                </p>  
             </div>                   
             <p *ngIf="isNewUser" class="txt-link-button">Já é usuário?  <a mat-button (click)=subscribeNewUser(false)>Logar</a></p>  

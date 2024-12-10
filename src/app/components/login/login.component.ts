@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Credenciais } from 'src/app/models/credenciais';
 import { AuthService } from 'src/app/services/auth.service';
+import { LoginEsqueceuSenhaDialogComponent } from './login-esqueceu-senha-dialog/login-esqueceu-senha-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +30,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private toastService: ToastrService,
     private service: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {}
 
@@ -82,5 +86,9 @@ export class LoginComponent implements OnInit {
     this.isNewUser = param;
   }
 
-  
+  resetPassword() {  
+    const dialogConfig = new MatDialogConfig();
+
+    this.dialog.open(LoginEsqueceuSenhaDialogComponent, dialogConfig);
+  }
 }
