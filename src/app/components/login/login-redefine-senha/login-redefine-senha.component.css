@@ -1,5 +1,5 @@
 .title {
-    height: 5vh; /* Define 10% da altura da viewport */
+    height: 5vh;
     font-size: 1.5rem;
     padding: 1rem;
     background-color: #F0F4F3;
@@ -9,7 +9,7 @@
 }
 
 .titlepwd{
-   padding: 5rem;
+   margin-top: 5rem;
 }
 
 .container {
@@ -18,15 +18,16 @@
     justify-content: center;    
     background-color: white;   
 }
+
+.form-background-a {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
  
- .form-background-b {
-    flex: 0.2; /* Ocupa 50% da largura */
-    display: flex;
-    background-color: #F0F4F3;
-    justify-content: center; /* Centraliza o formulário */
-    align-items: center; /* Alinha verticalmente no centro */
-    margin-top: 10rem; /* Ajusta o espaço superior */
-    margin-bottom: 30rem; /* Ajusta o espaço inferior */
+.form-background-b {
+    flex: 0.2; 
+    margin-top: 5rem; 
  }
  
  .form {
@@ -47,16 +48,16 @@
  /* Responsividade */
  @media (max-width: 768px) {
     .container {
-       flex-direction: column; /* Empilha elementos em telas pequenas */
+       flex-direction: column;
     }
  
     .form {
-       width: 90%; /* Formulário ocupa quase toda a largura */
+       width: 90%; 
     }
  
     .image {
-       height: auto; /* Ajusta a altura da imagem */
-       display: none; /* Oculta a imagem em telas pequenas */
+       height: auto;
+       display: none;
     }
  }
  

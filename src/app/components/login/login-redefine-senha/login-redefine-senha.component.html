@@ -3,7 +3,8 @@
 </div>
 <div class="container">    
     <div *ngIf="!isValidateToken()" class="form-background-a"> 
-        <h1 class="titlepwd">Sessão expirada. Solicite nova redefinição de senha.</h1>
+      <h1 class="titlepwd">Sessão expirada. Solicite nova redefinição de senha na tela de Login.</h1>   
+      <button *ngIf="!isValidateToken()" (click)="login()" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Login</button>
     </div>
 
     <div *ngIf="isValidateToken()" class="form-background-b">   
