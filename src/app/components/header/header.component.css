@@ -11,9 +11,6 @@
    flex: 1 1 auto;
  }
  
- .container {
-   margin-top: 60px;
- }
 
  .custom-toolbar{
    height: 50px;
@@ -29,3 +26,50 @@
    justify-content: flex-end; /* Alinha tudo à direita */
    padding-right: 16px; /* Adiciona um espaço à direita */
  }
+
+ /* Responsividade */
+@media (max-width: 1024px) {
+  .custom-toolbar {
+     font-size: 14px; /* Reduz o tamanho da fonte */
+  }
+
+  .title {
+     font-size: 1.2rem; /* Reduz o tamanho do título */
+  }
+
+  .custom-toolbar button {
+     font-size: 12px; /* Reduz o tamanho dos botões */
+     gap: 2px; /* Menor espaçamento entre texto e ícone */
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-toolbar {
+     flex-direction: column; /* Empilha os elementos em telas pequenas */
+     align-items: stretch; /* Expande os elementos para ocupar toda a largura */
+  }
+
+  .title {
+     margin-bottom: 8px; /* Adiciona espaçamento abaixo do título */
+     text-align: center;
+  }
+
+  .custom-toolbar button {
+     justify-content: flex-start; /* Alinha texto e ícones à esquerda */
+     padding: 8px 0; /* Ajusta o espaçamento interno dos botões */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-toolbar {
+     font-size: 12px; /* Reduz o tamanho da fonte ainda mais */
+  }
+
+  .title {
+     font-size: 1rem; /* Reduz o tamanho do título */
+  }
+
+  .custom-toolbar button {
+     font-size: 11px; /* Ajusta o tamanho dos botões */
+  }
+}

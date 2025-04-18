@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:8080'
+  //baseUrl: 'https://9697-2a01-e0a-839-f370-f96d-3a5f-a924-df03.ngrok-free.app'
 };
 
 /*

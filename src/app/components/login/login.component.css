@@ -55,17 +55,48 @@ button {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
    .container {
-      flex-direction: column; /* Empilha elementos em telas pequenas */
+      gap: 0.5rem; /* Reduz o espaçamento entre colunas */
    }
 
-   .form {
+   .form-background {
+      padding: 1.5rem; /* Reduz o padding do formulário */
+   }
+}
+
+@media (max-width: 768px) {
+   .container {
+      flex-direction: column; /* Empilha os elementos em telas pequenas */
+      align-items: center;
+   }
+
+   .form-background {
       width: 90%; /* Formulário ocupa quase toda a largura */
+      padding: 1.5rem 1rem;
    }
 
    .image {
-      height: auto; /* Ajusta a altura da imagem */
       display: none; /* Oculta a imagem em telas pequenas */
+   }
+}
+
+@media (max-width: 480px) {
+   .form {
+      padding: 1rem; /* Reduz o padding do formulário */
+      gap: 1rem; /* Ajusta o espaçamento entre os campos */
+   }
+
+   h1 {
+      font-size: 1.2rem; /* Ajusta o tamanho do título */
+   }
+
+   button {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+   }
+
+   .txt-link-button {
+      font-size: 0.8rem;
    }
 }

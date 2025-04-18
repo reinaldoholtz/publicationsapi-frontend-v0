@@ -55,3 +55,88 @@ table tr:hover {
    width: 100%;
    margin: 0 auto;          
  } 
+
+ .responsive-grid{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 24px
+ }
+
+ .descricao-limitada {
+    max-width: 300px; /* ajuste como quiser */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+ /* Responsividade para telas menores */
+/* @media (max-width: 1024px) {
+   .container {
+       width: 95%;
+   }
+
+   .search-field {
+       max-width: 700px;
+   }
+
+   mat-form-field {
+       width: 100%;
+   }
+
+   h1 {
+       font-size: 1.8rem;
+   }
+}
+
+@media (max-width: 768px) {
+   h1 {
+       font-size: 1.5rem;
+       margin-bottom: 0.5rem;
+   }
+
+   .search-container {
+       flex-direction: column;
+       margin-bottom: 1rem;
+   }
+
+   .search-field {
+       max-width: 90%;
+   }
+
+   button {
+       width: 100%;
+   }
+}
+
+@media (max-width: 480px) {
+   .container {
+       width: 100%;
+       padding: 1rem;
+   }
+
+   table {
+       width: 100%;
+       font-size: 0.9rem;
+   }
+
+   th, td {
+       padding: 0.5rem;
+   }
+
+   h1 {
+       font-size: 1.2rem;
+   }
+
+   .search-container {
+       flex-direction: column;
+       align-items: stretch;
+   }
+
+   .search-field {
+       width: 100%;
+   }
+
+   button {
+       width: 100%;
+       margin-top: 0.5rem;
+   }
+} */
