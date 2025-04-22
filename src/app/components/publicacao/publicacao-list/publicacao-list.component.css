@@ -55,3 +55,22 @@ table tr:hover {
    width: 100%;
    margin: 0 auto;          
  } 
+
+ .coluna-texto {
+   max-width: 400px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+
+ /* .coluna-texto:hover {
+   overflow: visible;
+   white-space: normal;
+   background: #fff;
+   position: relative;
+   z-index: 10;
+ } */
+
+ .selected {
+   background-color: #e0faeb !important;
+ }

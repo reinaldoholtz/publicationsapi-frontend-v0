@@ -15,15 +15,22 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class PublicacaoReadComponent implements OnInit {
 
   publicacao: Publicacao = {
-    orgao:      '',
-    unidade:      '',
-    localidade: '',
-    tipo:     '',
-    numeroProcesso:     '',
-    descricao: '',
-    documento: '',
-    dataPublicacao: '',
-  } 
+   codigo:              '',
+   idMateria:           '',
+   idArquivo:           '',
+   processo:            '',
+   partes:              '',
+   termos:              '',
+   justica:             '',
+   estado:              '',
+   forum:               '',
+   pagina:              '',
+   diario:              '',
+   dataProcessamento:   '',
+   dataDiario:          '',
+   texto:               '',
+   documento:           '',
+  }   
 
   constructor(
     private publicacaoService: PublicacaoService,

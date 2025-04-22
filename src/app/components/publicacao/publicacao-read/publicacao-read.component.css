@@ -18,11 +18,11 @@
     height: 15rem;
  }
 
-.orgao, .unidade, .localidade, .tipo, .numeroProcesso, .dataPublicacao, .descricao {
+.codigo, .idMateria, .idArquivo, .processo, .partes, .termos, .justica, .estado, .forum, .pagina, .diario, .dataProcessamento, .dataDiario, .texto {
     text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2); 
 }
-  
- .descricao {
+
+ .texto {
     min-height: 15rem;
     max-height: 20rem;   
  }

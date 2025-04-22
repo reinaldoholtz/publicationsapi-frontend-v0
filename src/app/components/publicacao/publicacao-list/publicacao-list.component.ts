@@ -24,11 +24,13 @@ export class PublicacaoListComponent implements OnInit {
   pageIndex = 0;
   pageSize = 5; 
 
-  columnsToDisplay: string[] = ['numeroProcesso', 'orgao', 'unidade', 'localidade', 'tipo', 'dataPublicacao','descricao', 'acoes'];
+  columnsToDisplay: string[] = ['processo', 'termos', 'justica', 'estado', 'diario', 'dataDiario','texto', 'acoes'];
 
   dataSource = new MatTableDataSource<Publicacao>(this.ELEMENT_DATA);
 
   queryField = new UntypedFormControl('', [Validators.maxLength(100)]);
+
+  selectedRowId: number | null = null;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;  
 
@@ -46,7 +48,7 @@ export class PublicacaoListComponent implements OnInit {
       this.pageSize = state.pageSize;
       this.queryField.setValue(state.query);
 
-      this.findAllByDescription({
+      this.findAllByTexto({
         length: 0,
         pageIndex: this.pageIndex,
         pageSize: this.pageSize,
@@ -54,10 +56,10 @@ export class PublicacaoListComponent implements OnInit {
     }       
   }
  
-  findAllByDescription(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 5 }): void{   
+  findAllByTexto(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 5 }): void{   
     this.isShowTable = false; 
     this.isShowSpinner = true;
-    this.service.findAllByDescription(this.queryField.value,pageEvent.pageIndex, pageEvent.pageSize).subscribe(
+    this.service.findAllByTexto(this.queryField.value,pageEvent.pageIndex, pageEvent.pageSize).subscribe(
       response => {
         this.ELEMENT_DATA = response.publications;
         this.dataSource = new MatTableDataSource<Publicacao>(this.ELEMENT_DATA);
@@ -85,6 +87,7 @@ export class PublicacaoListComponent implements OnInit {
   } 
  
   onRead(publication: any): void {  
+    this.selectedRowId = publication.id;
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -95,6 +98,10 @@ export class PublicacaoListComponent implements OnInit {
         data: publication
     };
 
-    this.dialog.open(PublicacaoReadDialogComponent, dialogConfig);
+    this.dialog.open(PublicacaoReadDialogComponent, dialogConfig)
+    .afterClosed()
+    .subscribe(() => {
+      this.selectedRowId = null;
+    });
   }
 }

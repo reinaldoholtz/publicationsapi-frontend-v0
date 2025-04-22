@@ -1,58 +1,88 @@
 <div class="container mat-elevation-z8">
     <h1 mat-dialog-title>Detalhe da Publicação</h1>
     <mat-dialog-content class="dialog-content-custom">       
-        <!-- <div class="form-fields"> 
-            <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Órgão</mat-label>
-                <input matInput [disabled]="true" [value]="publicacao.orgao" />
-            </mat-form-field>
-  
-            <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Unidade</mat-label>
-                <input matInput [disabled]="true" [value]="publicacao.unidade" />
-            </mat-form-field>
-        </div> -->
+        
+		<div class="form-grid">
+			<mat-form-field appearance="outline" class="processo-field">
+			  <mat-label>Processo</mat-label>
+			  <input matInput [disabled]="true" [value]="publicacao.processo" class="processo">
+			</mat-form-field>
 
-        <!-- <div class="form-fields">
-            <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Localidade</mat-label>
-                <input matInput [disabled]="true" [value]="publicacao.localidade" />
-            </mat-form-field>
-  
-            <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Tipo</mat-label>
-                <input matInput [disabled]="true" [value]="publicacao.tipo" />
-            </mat-form-field>
-        </div> -->
+			<mat-form-field  appearance="outline" class="idmateria-field">
+				<mat-label>Id Materia</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.idMateria || ' '" class="idMateria">
+			</mat-form-field>
 
-		<div class="form-fields">
-			<mat-form-field class="full-width" appearance="outline">
-			  <mat-label>Número do Processo</mat-label>
-			  <input matInput
-				  [disabled]="true"
-				  [value]="publicacao.numeroProcesso"
-				  class="numeroProcesso">
+			<mat-form-field appearance="outline" class="idarquivo-field">
+				<mat-label>Id Arquivo</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.idArquivo || ' '" class="idArquivo">
+			</mat-form-field>
+
+			<mat-form-field appearance="outline" class="partes-field">
+				<mat-label>Partes</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.partes || ' '" class="partes">
+			</mat-form-field>
+
+			<mat-form-field  appearance="outline" class="termos-field">
+				<mat-label>Termos</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.termos || ' '" class="termos">
+			</mat-form-field>
+
+			<mat-form-field  appearance="outline" class="forum-field">
+				<mat-label>Forum</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.forum || ' '" class="forum">
+			</mat-form-field>
+
+			<mat-form-field appearance="outline" class="dataproc-field">
+				<mat-label>Data do Processamento</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.dataProcessamento" class="dataProcessamento">
+			</mat-form-field>
+
+			<mat-form-field appearance="outline" class="justica-field">
+				<mat-label>Justiça</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.justica" class="justica">
 			</mat-form-field>
 	
-			<mat-form-field class="full-width" appearance="outline">
-			  <mat-label>Data da Publicação</mat-label>
-			  <input matInput
-				  [disabled]="true"
-				  [value]="publicacao.dataPublicacao"
-				  class="dataPublicacao">
+			<mat-form-field appearance="outline" class="estado-field">
+				<mat-label>Estado</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.estado" class="estado">
+			</mat-form-field>
+
+			<mat-form-field appearance="outline" class="datadiario-field">
+			  <mat-label>Data do Diário</mat-label>
+			  <input matInput [disabled]="true" [value]="publicacao.dataDiario" class="dataDiario">
+			</mat-form-field>
+
+			<mat-form-field  appearance="outline" class="pagina-field">
+				<mat-label>Página</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.pagina || ' '" class="pagina">
+			</mat-form-field>
+
+			<mat-form-field  appearance="outline" class="diario-field">
+				<mat-label>Diário</mat-label>
+				<input matInput [disabled]="true" [value]="publicacao.diario" class="diario">
+			</mat-form-field>
+
+			<mat-form-field  appearance="outline" class="texto-field">
+				<mat-label>Texto</mat-label>
+				<textarea matInput
+					[disabled]="true"
+					[value]="publicacao.texto"
+					class="texto">
+				</textarea>
 			</mat-form-field>
 	    </div>
 
-        <div class="form-fields">
+        <!-- <div class="form-fields">
 		   <mat-form-field class="full-width" appearance="outline">
-			 <mat-label>Descrição</mat-label>
+			 <mat-label>Texto</mat-label>
 			 <textarea matInput
 				 [disabled]="true"
-				 [value]="publicacao.descricao"
-				 class="descricao">
+				 [value]="publicacao.texto"
+				 class="texto">
 			 </textarea>
 		   </mat-form-field>
-        </div>   
+        </div>    -->
 
 	</mat-dialog-content>
 
@@ -66,5 +96,4 @@
 			</button>
 	</mat-dialog-actions>
 
-    <!-- <p class="full-width"></p> -->
 </div>

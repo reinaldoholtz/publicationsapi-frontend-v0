@@ -1,57 +1,56 @@
-.container {
-    width: 1000px;
-    height: auto; /* Permite ajustar dinamicamente a altura */
-    max-height: 100vh; /* Limita a altura máxima à altura da viewport */
-    overflow: hidden; /* Esconde qualquer conteúdo que exceda a área visível */
-    padding: 2rem;
-    border-radius: 0rem;
-    background: #F0F4F3;
+ .container {
+   width: 95%;
+   max-width: 1000px; /* Reduzir um pouco a largura máxima */
+   margin-left: 0; /* Remover margem automática da esquerda */
+   margin-right: auto; /* Manter margem automática na direita */
+   padding: 1.5rem;
+   background: #F0F4F3;
  }
-
- .form-fields {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem; /* Define o espaçamento horizontal entre os campos */
-  }
  
- .full-width {
-    width: 100%;
+
+  .form-grid {
+   display: grid;   
+   grid-template-columns: repeat(12, 1fr);
+   gap: 1rem;
  }
-  
-.orgao, .unidade, .localidade, .tipo, .numeroProcesso, .dataPublicacao, .descricao {
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2); 
+ 
+ .processo-field { grid-column: span 4; padding-top: 1rem;}
+ .idmateria-field { grid-column: span 3; padding-top: 1rem;}
+ .idarquivo-field { grid-column: span 3; padding-top: 1rem;}
+ .partes-field { grid-column: span 2; padding-top: 1rem;}
+ 
+ .termos-field { grid-column: span 3; }
+ .forum-field { grid-column: span 2; }
+ .dataproc-field { grid-column: span 3; }
+ .justica-field { grid-column: span 4; }
+ 
+ .estado-field { grid-column: span 2; }
+ .datadiario-field { grid-column: span 3; }
+ .pagina-field { grid-column: span 2; } 
+ .diario-field { grid-column: span 5; } 
+ 
+ .texto-field { grid-column: 1 / -1; }  
+
+.codigo, .idMateria, .idArquivo, .processo, .partes, .termos, .justica, .estado, .forum, .pagina, .diario, .dataProcessamento, .dataDiario, .texto {
+   text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2); 
 }
   
- .descricao {
-    min-height: 15rem;
-    max-height: 20rem;   
+ .texto {
+    min-height: 5rem;
+    max-height: 7rem;   
     font-size: 0.875rem; /* Define o tamanho da fonte (14px, equivalente a 0.875rem) */
     line-height: 1.5;    /* Ajusta o espaçamento entre linhas para melhor legibilidade */
     overflow-y: auto;    /* Permite rolagem dentro do campo apenas */
  }
-
- button {
-    margin-top: .5rem;
- }
  
- /* p {
-    margin-top: 3rem;
-    opacity: .5;
-    text-align: center;
- } */
-
-::ng-deep .custom-dialog-container {
-    width: auto;
-    height: auto;
-    border-radius: 0rem;
-    padding: 3rem;
-    background-color: transparent;
-    max-width: auto;
-    margin: 0 auto;
-}
+ button {
+    margin-top: .2rem;
+    width: 100%;
+ }
 
 .dialog-content-custom {
-    padding: 0.5rem 1rem;
-    padding-top: inherit;
-    max-height: calc(100vh - 10rem); 
-}
+   max-height: 80vh; /* Limita a altura para evitar problemas de scroll */
+   overflow-y: auto;
+ }
+ 
+ 
