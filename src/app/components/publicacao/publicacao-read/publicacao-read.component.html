@@ -6,45 +6,45 @@
          <mat-label>Título da publicação</mat-label>
          <input 
          [disabled]="true"
-         [(ngModel)]="publicacao.orgao"
-         name="orgao"
-         class="orgao"
+         [(ngModel)]="publicacao.justica"
+         name="justica"
+         class="justica"
          matInput>
        </mat-form-field>
     </form>
  
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Unidade</mat-label>
+          <mat-label>Termos</mat-label>
           <input 
           [disabled]="true"
-          [(ngModel)]="publicacao.unidade"
-          name="unidade"
-          class="unidade"
+          [(ngModel)]="publicacao.termos"
+          name="termos"
+          class="termos"
           matInput>
         </mat-form-field>
     </form>
 
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Localidade</mat-label>
+          <mat-label>Estado</mat-label>
           <input 
           [disabled]="true"
-          [(ngModel)]="publicacao.localidade"
-          name="localidade"
-          class="localidade"
+          [(ngModel)]="publicacao.estado"
+          name="estado"
+          class="estado"
           matInput>
         </mat-form-field>
     </form>
 
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Tipo</mat-label>
+          <mat-label>Diário</mat-label>
           <input 
           [disabled]="true"
-          [(ngModel)]="publicacao.tipo"
-          name="tipo"
-          class="tipo"
+          [(ngModel)]="publicacao.diario"
+          name="diario"
+          class="diario"
           matInput>
         </mat-form-field>
     </form>
@@ -54,33 +54,33 @@
           <mat-label>Número do Processo</mat-label>
           <input 
           [disabled]="true"
-          [(ngModel)]="publicacao.numeroProcesso"
-          name="numeroProcesso"
-          class="numeroProcesso"
+          [(ngModel)]="publicacao.processo"
+          name="processo"
+          class="processo"
           matInput>
         </mat-form-field>
     </form>
 
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Data da Publicação</mat-label>
+          <mat-label>Data da Diário</mat-label>
           <input 
           [disabled]="true"
-          [(ngModel)]="publicacao.dataPublicacao"
-          name="dataPublicacao"
-          class="dataPublicacao" 
+          [(ngModel)]="publicacao.dataDiario"
+          name="dataDiario"
+          class="dataDiario" 
           matInput>
         </mat-form-field>
     </form>
 
     <form class="form">  
        <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Descrição</mat-label>
+         <mat-label>Texto</mat-label>
          <textarea 
          [disabled]="true"
-         [(ngModel)]="publicacao.descricao"
-         name="descricao"
-         class="descricao" 
+         [(ngModel)]="publicacao.texto"
+         name="texto"
+         class="texto" 
          matInput 
          ></textarea>
        </mat-form-field>

@@ -9,16 +9,24 @@ import { Publicacao } from 'src/app/models/publicacao';
   styleUrls: ['./publicacao-read-dialog.component.css']
 })
 export class PublicacaoReadDialogComponent {
+  
   publicacao: Publicacao = {
-    orgao:      '',
-    unidade:      '',
-    localidade: '',
-    tipo:     '',
-    numeroProcesso:     '',
-    descricao: '',
-    documento: '',
-    dataPublicacao: '',
-  } 
+    codigo:              '',
+    idMateria:           '',
+    idArquivo:           '',
+    processo:            '',
+    partes:              '',
+    termos:              '',
+    justica:             '',
+    estado:              '',
+    forum:               '',
+    pagina:              '',
+    diario:              '',
+    dataProcessamento:   '',
+    dataDiario:          '',
+    texto:               '',
+    documento:           '',
+   }   
 
   constructor(
       private dialogRef: MatDialogRef<PublicacaoReadDialogComponent>,

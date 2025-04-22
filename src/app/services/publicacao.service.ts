@@ -16,7 +16,7 @@ export class PublicacaoService {
     return this.http.get<Publicacao>(`${environment.baseUrl}/v1/publications/${id}`);
   }
   
-  findAllByDescription(query: any,page = 0, pageSize = 10): Observable<PublicacaoPage> {
+  findAllByTexto(query: any,page = 0, pageSize = 10): Observable<PublicacaoPage> {
     const params = new HttpParams()
     .set('query', query)
     .set('page', page.toString())
